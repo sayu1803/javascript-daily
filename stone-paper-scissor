@@ -1,0 +1,24 @@
+let user = prompt("Give your input: Stone, Paper, or Scissor");
+let cpuT = Math.floor(Math.random() * 3);
+let cpu = ["Stone", "Paper", "Scissor"][cpuT];
+
+const match = (cpu, user) => {
+  if (cpu === user) {
+    return "Tie";
+  } else if (cpu === "Stone" && user === "Paper") {
+    return "You WON";
+  } else if (cpu === "Stone" && user === "Scissor") {
+    return "You Lost";
+  } else if (cpu === "Paper" && user === "Stone") {
+    return "You Lost";
+  } else if (cpu === "Paper" && user === "Scissor") {
+    return "You WON";
+  } else if (cpu === "Scissor" && user === "Paper") {
+    return "You Lost";
+  } else if (cpu === "Scissor" && user === "Stone") {
+    return "You WON";
+  }
+};
+
+let result = match(cpu, user);
+document.write(`CPU: ${cpu} and User: ${user}\nThe winner is ${result}`);
